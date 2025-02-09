@@ -1,6 +1,9 @@
 body {
   font-size: .875rem;
   background-color: #fbfbfb;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .feather {
@@ -10,15 +13,6 @@ body {
 }
 
 /** Sidebar**/
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 0;
-}
-
-/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
