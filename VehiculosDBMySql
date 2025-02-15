@@ -1,0 +1,29 @@
+CREATE TABLE `mysql`.`usuarios` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(15) NOT NULL,
+  `correo` varchar(20) NOT NULL,
+  `contraseña` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+ALTER TABLE `mysql`.`usuarios` ADD PRIMARY KEY (`id`);
+ALTER TABLE `mysql`.`usuarios` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2 ;
+
+SET SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
+
+INSERT INTO `mysql`.`usuarios`(`id`, `usuario`, `correo`, `contraseña`) SELECT `id`, `usuario`, `correo`, `contraseña` FROM `gestiónautos`.`usuarios`;
+CREATE TABLE `mysql`.`vehiculos` (
+  `id` int(11) NOT NULL,
+  `marca` varchar(100) NOT NULL,
+  `modelo` varchar(100) NOT NULL,
+  `placa` varchar(20) NOT NULL,
+  `kilometraje` int(11) NOT NULL,
+  `ultimo_mantenimiento` date NOT NULL,
+  `imagen` longblob NOT NULL,
+  `proximo_mantenimiento` date DEFAULT NULL,
+  `estado` enum('disponible','ocupado','mantenimiento') DEFAULT 'disponible'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+ALTER TABLE `mysql`.`vehiculos` ADD PRIMARY KEY (`id`);
+ALTER TABLE `mysql`.`vehiculos` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10 ;
+
+SET SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
+
+INSERT INTO `mysql`.`vehiculos`(`id`, `marca`, `modelo`, `placa`, `kilometraje`, `ultimo_mantenimiento`, `imagen`, `proximo_mantenimiento`, `estado`) SELECT `id`, `marca`, `modelo`, `placa`, `kilometraje`, `ultimo_mantenimiento`, `imagen`, `proximo_mantenimiento`, `estado` FROM `gestiónautos`.`vehiculos`;
